@@ -8,6 +8,7 @@ import Alert from './components/layout/Alert';
 import { loadUser } from './actions/auth'; 
 import { Provider } from 'react-redux';
 import store from './store';
+import Profile from './components/profile/Profile';
 import { useEffect } from 'react';
 import setAuthToken from './utils/setAuthToken';
 import Dashboard from './components/dashboard/Dashboard';
@@ -37,6 +38,7 @@ const App = () => {
             <Route exact path="/register" element={<Register />}/>
             <Route exact path="/login" element={<Login />}/>
             <Route exact path="/profiles" element={<Profiles />}/>
+            <Route exact path="/profile/:id" element={<Profile />}/>
             <Route  element={<PrivateRoute />}>
               <Route exact path="/dashboard" element={<Dashboard />}/>
               <Route path='/create-profile' element={<CreateProfile/>} />
