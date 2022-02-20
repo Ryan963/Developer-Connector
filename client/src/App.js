@@ -9,6 +9,7 @@ import { loadUser } from './actions/auth';
 import { Provider } from 'react-redux';
 import store from './store';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
 import { useEffect } from 'react';
 import setAuthToken from './utils/setAuthToken';
 import Dashboard from './components/dashboard/Dashboard';
@@ -18,6 +19,7 @@ import EditProfile from './components/profile-form/EditProfile';
 import AddExperience from './components/profile-form/AddExperience';
 import AddEducation from './components/profile-form/AddEducation';
 import Profiles from './components/profiles/Profiles';
+import Post from './components/post/Post';
 
 if(localStorage.token) {
   setAuthToken(localStorage.token);
@@ -45,6 +47,8 @@ const App = () => {
               <Route path='/edit-profile' element={<EditProfile />} />
               <Route path='/add-experience' element={<AddExperience />} />
               <Route path="/add-education" element={<AddEducation />} />
+              <Route path="/posts" element={<Posts/>} />
+              <Route path="/posts/:id" element={<Post />} /> 
             </Route>
           </Routes>
         
